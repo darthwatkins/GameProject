@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spaceship shooter project", "Spaceship shooter project.csproj", "{C01DBBA8-4D54-3530-52BB-CEA7EFEFE425}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spaceship shooter project.Editor", "Spaceship shooter project.Editor.csproj", "{046688CB-E368-54DB-3E0B-816F95AC3505}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C01DBBA8-4D54-3530-52BB-CEA7EFEFE425}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C01DBBA8-4D54-3530-52BB-CEA7EFEFE425}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C01DBBA8-4D54-3530-52BB-CEA7EFEFE425}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C01DBBA8-4D54-3530-52BB-CEA7EFEFE425}.Release|Any CPU.Build.0 = Release|Any CPU
+		{046688CB-E368-54DB-3E0B-816F95AC3505}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{046688CB-E368-54DB-3E0B-816F95AC3505}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{046688CB-E368-54DB-3E0B-816F95AC3505}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{046688CB-E368-54DB-3E0B-816F95AC3505}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F758E8E4-692C-4732-9E1E-280CCCDF488E}
+	EndGlobalSection
+EndGlobal
