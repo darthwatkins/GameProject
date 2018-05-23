@@ -33,7 +33,7 @@ public class ShipController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-
+        m_trailParticles.Stop();
 	}
 
     // take damage 
@@ -73,6 +73,12 @@ public class ShipController : MonoBehaviour {
 
             // add force to relative y axis of ship
             m_rigidBody.AddRelativeForce(new Vector2(0f, addtionalVelocity));
+
+            // turn off/on engine trail particles if enabled in the PlayerSettignsScript
+            if (PlayerSettingsScript.Instance.Particles && addtionalVelocity > 0) {
+                m_trailParticles.Play();
+            }
+            else if (m_trailParticles.isPlaying)  m_trailParticles.Stop();
         }
     }
 }

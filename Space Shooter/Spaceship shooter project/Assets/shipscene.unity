@@ -247,7 +247,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1636433424
 Transform:
   m_ObjectHideFlags: 0
@@ -255,7 +255,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1636433423}
   m_LocalRotation: {x: -0.005470206, y: 0.70708567, z: -0.70708567, w: 0.005470206}
-  m_LocalPosition: {x: -0.017, y: -0.63, z: 0.5}
+  m_LocalPosition: {x: -0.023, y: -0.619, z: 0.5}
   m_LocalScale: {x: 0.13004935, y: 0.1300494, z: 0.1300494}
   m_Children: []
   m_Father: {fileID: 1947506339}
@@ -324,11 +324,11 @@ ParticleSystem:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1636433423}
   serializedVersion: 5
-  lengthInSec: 5
-  simulationSpeed: 9
+  lengthInSec: 2
+  simulationSpeed: 10
   stopAction: 0
   looping: 1
-  prewarm: 1
+  prewarm: 0
   playOnAwake: 1
   useUnscaledTime: 0
   autoRandomSeed: 0
@@ -386,7 +386,7 @@ ParticleSystem:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-  moveWithTransform: 1
+  moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
   randomSeed: 0
@@ -396,7 +396,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 0.5
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -1141,7 +1141,7 @@ ParticleSystem:
     rateOverDistance:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0
+      scalar: 10
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -1760,7 +1760,7 @@ ParticleSystem:
     y:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 5
+      scalar: 10
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -4879,8 +4879,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_rigidBody: {fileID: 1947506337}
-  m_angularMultiplier: 5
-  m_linearMultiplier: 50
+  m_angularMultiplier: 2
+  m_linearMultiplier: 30
   m_maxThrustSpeed: 20
   m_trailParticles: {fileID: 1636433426}
   m_shotCoolDown: 0
@@ -4963,7 +4963,7 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 5
-  m_AngularDrag: 1
+  m_AngularDrag: 5
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
