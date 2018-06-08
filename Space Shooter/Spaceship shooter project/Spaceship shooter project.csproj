@@ -296,7 +296,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\CameraController.cs" />
     <Compile Include="Assets\Scripts\GameStatusController.cs" />
+    <Compile Include="Assets\Scripts\PlayerBulletPooler.cs" />
     <Compile Include="Assets\Scripts\PlayerSettingsScript.cs" />
     <Compile Include="Assets\Scripts\SettingsLoader.cs" />
     <Compile Include="Assets\Scripts\ShipController.cs" />

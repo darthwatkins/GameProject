@@ -23,7 +23,8 @@ public class ShipController : MonoBehaviour {
 
     // Firing setting
     [SerializeField]
-    private float m_shotCoolDown;
+    private float m_shotsPerSecond;
+    private float m_shotCoolDown = 0f;
 
     [SerializeField]
     private float m_shotSpeed;
@@ -31,9 +32,18 @@ public class ShipController : MonoBehaviour {
     [SerializeField]
     private int m_weaponType; // 0 = standard, 1 = supershot, 2 = megashot
 
-	// Use this for initialization
-	void Start () {
+    [SerializeField]
+    private PlayerBulletPooler m_playerBulletPooler;
+
+    [SerializeField]
+    private List<GameObject> m_firePoints;
+    private int m_fireIndex = 0;
+
+    // Use this for initialization
+    void Start () {
+        // stop the engine particle system playing
         m_trailParticles.Stop();
+
 	}
 
     // take damage 
@@ -47,7 +57,37 @@ public class ShipController : MonoBehaviour {
         // handle input and movement
         HandleMovement();
         // handle firing
+        HandleFiring();
+     
 	}
+
+    private void HandleFiring() {
+        // check for fire button press#
+        if (m_shotCoolDown > 0f) {
+            m_shotCoolDown -= Time.deltaTime;
+        }
+        if (m_shotCoolDown <= 0f && Input.GetKey(KeyCode.LeftAlt)) {
+
+            Debug.Log(m_shotCoolDown);
+
+            // spawn new bullet
+            GameObject bullet = m_playerBulletPooler.GetPlayerBullet();
+            bullet.transform.position = m_firePoints[m_fireIndex].transform.position;
+            bullet.transform.rotation = m_firePoints[m_fireIndex].transform.rotation;
+            bullet.GetComponent<Rigidbody2D>().velocity = bullet.transform.up * m_shotSpeed;
+
+            // cycle fire points
+            m_fireIndex++;
+            if (m_fireIndex >= m_firePoints.Count) m_fireIndex = 0;
+
+            // set cooldown
+            m_shotCoolDown = 1f / m_shotsPerSecond;
+
+
+        }
+
+
+    }
 
     // movement mechanics for the ship object.
     private void HandleMovement() {
@@ -62,6 +102,8 @@ public class ShipController : MonoBehaviour {
             // thrust
             // get input
             float vSpeed = Input.GetAxis("Vertical");
+            // remove reverse
+            if (vSpeed < 0) vSpeed = 0;
 
             // get speed
             float mag = Mathf.Abs(m_rigidBody.velocity.magnitude) / m_maxThrustSpeed;
@@ -69,7 +111,7 @@ public class ShipController : MonoBehaviour {
             // ammount of acceleration to add on a curve limiting acceleration as we hit top speed
             float addtionalVelocity = (vSpeed * m_linearMultiplier) * (1f - Mathf.Pow(mag, 3));
 
-            Debug.Log(1f - Mathf.Pow(mag, 3));
+           // Debug.Log(1f - Mathf.Pow(mag, 3));
 
             // add force to relative y axis of ship
             m_rigidBody.AddRelativeForce(new Vector2(0f, addtionalVelocity));
