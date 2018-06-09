@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShipController : MonoBehaviour {
+public class ShipController : Damageable {
 
     // Thrust settings
     [SerializeField]
@@ -36,45 +36,62 @@ public class ShipController : MonoBehaviour {
     private PlayerBulletPooler m_playerBulletPooler;
 
     [SerializeField]
+    private GameObject m_muzzleFlash;
+
+    [SerializeField]
     private List<GameObject> m_firePoints;
     private int m_fireIndex = 0;
+
+    [SerializeField]
+    private int m_health;
+
+    [SerializeField]
+    private int m_lives;
 
     // Use this for initialization
     void Start () {
         // stop the engine particle system playing
         m_trailParticles.Stop();
 
-	}
+        // debug bullet pooler list size
+        //m_playerBulletPooler.GetCount();
+    }
 
     // take damage 
-    public void takeDamage(int damage) {
+    public void TakeDamage(int damage) {
 
 
     }
 	
 	// Update is called once per frame
-	void Update () {
+	new void Update () {
+        // derrive from base class
+        base.Update();
         // handle input and movement
         HandleMovement();
         // handle firing
         HandleFiring();
-     
-	}
+    }
 
     private void HandleFiring() {
+
         // check for fire button press#
         if (m_shotCoolDown > 0f) {
             m_shotCoolDown -= Time.deltaTime;
         }
-        if (m_shotCoolDown <= 0f && Input.GetKey(KeyCode.LeftAlt)) {
-
-            Debug.Log(m_shotCoolDown);
+        if (m_shotCoolDown <= 0f && Input.GetKeyDown(KeyCode.Z)) {
 
             // spawn new bullet
             GameObject bullet = m_playerBulletPooler.GetPlayerBullet();
+            bullet.GetComponent<BulletScript>().Fire();
             bullet.transform.position = m_firePoints[m_fireIndex].transform.position;
             bullet.transform.rotation = m_firePoints[m_fireIndex].transform.rotation;
             bullet.GetComponent<Rigidbody2D>().velocity = bullet.transform.up * m_shotSpeed;
+
+            // set muzzle flash to fired cannon
+            m_muzzleFlash.SetActive(true);
+            m_muzzleFlash.transform.position = m_firePoints[m_fireIndex].transform.position;
+            m_muzzleFlash.transform.rotation = m_firePoints[m_fireIndex].transform.rotation;
 
             // cycle fire points
             m_fireIndex++;
@@ -85,8 +102,10 @@ public class ShipController : MonoBehaviour {
 
 
         }
-
-
+        else {
+            // hide muzzle flash
+            m_muzzleFlash.SetActive(false);
+        }
     }
 
     // movement mechanics for the ship object.

@@ -20,7 +20,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 6}
-  m_MinSize: {x: 950, y: 300}
+  m_MinSize: {x: 950, y: 542}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &2
 MonoBehaviour:
@@ -70,7 +70,7 @@ MonoBehaviour:
   m_MinSize: {x: 234, y: 492}
   m_MaxSize: {x: 10004, y: 14042}
   vertical: 1
-  controlID: 1781
+  controlID: 103
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -118,7 +118,7 @@ MonoBehaviour:
   m_MinSize: {x: 713, y: 492}
   m_MaxSize: {x: 18008, y: 14042}
   vertical: 1
-  controlID: 110
+  controlID: 81
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -140,7 +140,7 @@ MonoBehaviour:
     y: 0
     width: 1368
     height: 829
-  m_MinSize: {x: 950, y: 300}
+  m_MinSize: {x: 950, y: 542}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &7
 MonoBehaviour:
@@ -187,7 +187,7 @@ MonoBehaviour:
   m_MinSize: {x: 713, y: 492}
   m_MaxSize: {x: 18008, y: 14042}
   vertical: 0
-  controlID: 111
+  controlID: 82
 --- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -405,11 +405,11 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Scripts
+    - Assets/Prefabs
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/Scripts
+  - Assets/Prefabs
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\greeand\Documents\Unity\GameProject\GameProject\Space
     Shooter\Spaceship shooter project
@@ -417,9 +417,9 @@ MonoBehaviour:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: a20a0000
-    m_LastClickedID: 2722
-    m_ExpandedIDs: 00000000e008000000ca9a3bffffff7f
+    m_SelectedIDs: 060b0000
+    m_LastClickedID: 2822
+    m_ExpandedIDs: 00000000ea08000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -447,7 +447,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000e0080000
+    m_ExpandedIDs: 00000000ea080000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -475,7 +475,7 @@ MonoBehaviour:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 1
-    m_ExpandedInstanceIDs: 2c1c0000361c00004c1c000058240000ee2600008024000012270000f8260000aa25000008270000800500001a2500000e250000ba25000006070000000000009c5df9ffc66afeff
+    m_ExpandedInstanceIDs: 2c1c0000361c00004c1c000058240000ee2600008024000012270000f8260000aa25000008270000800500001a2500000e250000ba25000006070000000000009c5df9ffc66afeff220b0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -491,7 +491,7 @@ MonoBehaviour:
       m_IsRenaming: 0
       m_OriginalEventType: 11
       m_IsRenamingFilename: 1
-      m_ClientGUIView: {fileID: 10}
+      m_ClientGUIView: {fileID: 2}
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
       m_InstanceID: 0
@@ -528,14 +528,14 @@ MonoBehaviour:
     height: 758
   m_PersistentViewDataDictionary: {fileID: 0}
   m_SceneLighting: 1
-  lastFramingTime: 5972.402014849628
+  lastFramingTime: 1865.6569438712256
   m_2DMode: 1
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 0.101213336, y: -0.3293064, z: 0.12661728}
+    m_Target: {x: -0.20635709, y: -0.029718956, z: 0.1321572}
     speed: 2
-    m_Value: {x: 0.101213336, y: -0.3293064, z: 0.12661728}
+    m_Value: {x: -0.20635709, y: -0.029718956, z: 0.1321572}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -567,9 +567,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 9.271694
+    m_Target: 8.764927
     speed: 2
-    m_Value: 9.271694
+    m_Value: 8.764927
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -608,9 +608,9 @@ MonoBehaviour:
   m_PersistentViewDataDictionary: {fileID: 0}
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 
-    m_LastClickedID: 0
-    m_ExpandedIDs: 7ab7f4ff46caf4ff527dfffff0fbffff00000000840b0000
+    m_SelectedIDs: aa0b0000
+    m_LastClickedID: 2986
+    m_ExpandedIDs: f0fbffff00000000aa0b0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
